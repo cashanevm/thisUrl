@@ -2,6 +2,9 @@ package org.obrii.mit.dp2021.ProjectMIT.core;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 public class CoreApplication {
@@ -10,4 +13,9 @@ public class CoreApplication {
 		SpringApplication.run(CoreApplication.class, args);
 	}
 
+        @Bean
+        public RestTemplate restTemplate(){
+            return new RestTemplateBuilder().build();
+        }
+        
 }
